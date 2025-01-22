@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Larsseit;
+  src: url(../fonts/Larsseit-Light.otf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Larsseit;
+  src: url(../fonts/Larsseit-Thin.otf);
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Larsseit;
+  src: url(../fonts/Larsseit.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Larsseit;
+  src: url(../fonts/Larsseit-Medium.otf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Larsseit;
+  src: url(../fonts/Larsseit-Bold.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Larsseit;
+  src: url(../fonts/Larsseit-ExtraBold.otf);
+  font-weight: 900;
+}
+
+* {
+  font-family: Larsseit, sans-serif;
+  color: #1b1f23;
+}
+
+p p {
+  color: inherit;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .sliding {
+    animation: 37s linear infinite normal none running slide;
+    animation-delay: 2s;
+    width: fit-content;
+    will-change: transform;
+  }
+
+  .sliding:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(calc(-50%), 0, 0);
+    }
+  }
+}
